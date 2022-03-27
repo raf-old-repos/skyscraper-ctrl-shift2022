@@ -28,7 +28,7 @@ function App() {
           <spotLight position={[-10, 10, 10]} angle={0.15} penumbra={1} />
           <pointLight position={[-10, -10, -10]} />
           <group>
-            <VideoText position={[0, 5, -6]} />
+            <VideoText customFontPath="/DelaGothicOne-Regular.ttf" customText="In Construction" position={[0, 5, -6]} />
             <PositionalAudio
               autoplay
               loop

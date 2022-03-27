@@ -3,7 +3,10 @@ import { MeshProps } from "@react-three/fiber";
 import { useEffect, useState } from "react";
 import * as THREE from "three";
 
-interface VideoTextProps extends MeshProps {}
+interface VideoTextProps extends MeshProps {
+    customFontPath: string;
+    customText: string;
+}
 
 const VideoText: React.FC<VideoTextProps> = (props) => {
   const [video] = useState(() =>
@@ -18,12 +21,12 @@ const VideoText: React.FC<VideoTextProps> = (props) => {
   useEffect(() => void video.play(), [video]);
   return (
     <Text
-      font="/DelaGothicOne-Regular.ttf"
+      font={props.customFontPath}
       fontSize={5}
       letterSpacing={-0.05}
       {...props}
     >
-      In Construction
+      {props.customText}
       <meshBasicMaterial toneMapped={false}>
         <videoTexture
           attach="map"

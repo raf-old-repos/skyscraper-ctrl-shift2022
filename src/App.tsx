@@ -1,11 +1,12 @@
 import { Suspense } from "react";
 import "./App.css";
 import { Canvas } from "@react-three/fiber";
-import HomePage from "./components/HomePage";
 import Cube from "./models/Cube";
 import { EffectComposer, Bloom, Vignette } from "@react-three/postprocessing";
 import VideoText from "./models/VideoText";
 import { OrbitControls, PositionalAudio } from "@react-three/drei";
+import "./NavBar.tsx";
+
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
             enableZoom={false}
             enablePan
           />
-          <ambientLight intensity={2} />
+          <ambientLight intensity={3} />
           <spotLight position={[0, 10, 10]} angle={0.15} penumbra={1} />
           <spotLight position={[-10, 10, 10]} angle={0.15} penumbra={1} />
           <pointLight position={[-10, -10, -10]} />
@@ -36,9 +37,9 @@ function App() {
               position={[0, 5, -6]}
               url="/sound.mp3"
             />
-            <Cube position={[2, 0, 0]} color={["orange", "blue"]} />
-            <Cube position={[6, 0, 0]} color={["coral", "red"]} />
-            <Cube position={[-2, 0, 0]} color={["hotpink", "purple"]} />
+            <Cube position={[2, 0, 0]} color={["yellow", "blue"]} />
+            <Cube position={[6, 0, 0]} color={["yellow", "red"]} />
+            <Cube position={[-2, 0, 0]} color={["yellow", "purple"]} />
             <Cube position={[-6, 0, 0]} color={["yellow", "green"]} />
           </group>
           <EffectComposer>
@@ -52,4 +53,5 @@ function App() {
   );
 }
 
-export default App;
+export default App
+

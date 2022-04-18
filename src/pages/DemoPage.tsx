@@ -6,10 +6,12 @@ import { PositionalAudio } from "@react-three/drei";
 import Cube from "../models/Cube";
 import VideoText from "../models/VideoText";
 
+import "../App.css";
+
 type DemoProps = {};
 
 const DemoPage: React.FC<DemoProps> = (props) => {
-  return <div>
+  return <>
        <Canvas
         gl={{ alpha: false }}
         camera={{ fov: 75, near: 0.1, far: 500, position: [0, 0, 10] }}
@@ -49,7 +51,7 @@ const DemoPage: React.FC<DemoProps> = (props) => {
         </Suspense>
       </Canvas>
 
-  </div>;
+  </>;
 };
 
 export default DemoPage;

@@ -1,0 +1,82 @@
+.learn-sidebar {
+    width: 25%;
+    position: fixed;
+    height: 100%;
+    list-style-type: none;
+}
+
+.learn-sidebar .learn-link {
+    padding: 12px;
+}
+
+.learn-link a {
+    color: darkgrey;
+    padding: none;
+    text-decoration: none;
+}
+
+.learn-link a.active {
+    color: yellow;
+}
+
+.learn-link a:hover {
+    color: yellowgreen;
+}
+
+.learn-article {
+    margin-left: 25%;
+    padding: 16px 16px;
+}
+
+.learn-main-text {
+    text-shadow: 2px 2px 2px lightgrey;
+}
+
+.learn-descriptor {
+    padding: 100px;
+    background-color: lightgrey;
+}
+
+.navbar-container {
+    background: whitesmoke;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-list {
+    display: flex;
+    align-items: center;
+
+    @media screen (max-width: 768px) {
+        /* Mobile ! TODO */
+        display: none
+    }
+}
+
+.nav-link {
+    color: #808080;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    cursor: pointer;
+
+}
+
+.nav-link li.active {
+    color: #808080;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    cursor: pointer;
+    color: #000000;
+
+}
+
+footer {
+    padding: 100px;
+}

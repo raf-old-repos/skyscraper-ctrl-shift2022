@@ -8,7 +8,6 @@ type NavBarProps = {
 
 const NavBar: React.FC<NavBarProps> = (props) => {
   return (
-    <>
       <div className="navbar-container">
         <img className="navbar-logo" src={props.mainLogo} alt="logo" />
         <ul className="navbar-list">
@@ -16,13 +15,13 @@ const NavBar: React.FC<NavBarProps> = (props) => {
             <li key={idx} className="nav-link">
               <Link to={Item.link}>
                 <Item.icon className="nav-icon" />
+
                 {Item.name}
               </Link>
             </li>;
           })}
         </ul>
       </div>
-    </>
   );
 };
 

@@ -11,8 +11,8 @@ function App() {
     <>
       <Router>
         <Route path="/">
-          <DemoPage />
-          {/* <HomePage /> */}
+          {/* <DemoPage /> */}
+          <HomePage />
         </Route>
         <Route path="/learn">
           <LearnPage />

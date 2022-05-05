@@ -8,6 +8,7 @@ import { CgProfile } from "react-icons/cg";
 import { BsBuilding } from "react-icons/bs";
 
 import { FooterItem, NavBarItem } from "../types/components";
+import { Scroll } from "@react-three/drei";
 type MainProps = {};
 
 const MainLayout: React.FC<MainProps> = (props) => {
@@ -39,13 +40,16 @@ const MainLayout: React.FC<MainProps> = (props) => {
     ];
   return (
     <>
-      <div className="nav-container-layout">
-        <NavBar navbarItems={navbarItems} mainLogo="" />
-      </div>
-      <div className="main-body">{props.children}</div>
-      <div className="footer-container">
-        <Footer items={footerItems} />
-      </div>
+     <Scroll html>
+      <div>New navbar here</div>
+     </Scroll>
+
+     {props.children}
+
+     // ! FIGURE OUT FOOTER
+     {/* <Scroll html>
+      <div style={{bottom: "100%"}}>New footer here</div>
+     </Scroll> */}
     </>
   );
 };

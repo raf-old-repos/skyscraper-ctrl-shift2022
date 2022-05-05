@@ -1,29 +1,29 @@
-import { Scroll, ScrollControls } from "@react-three/drei";
+import {  ScrollControls } from "@react-three/drei";
+
 import React from "react";
+
+
+import Page from "../components/Page";
 import MainLayout from "../layouts/main.layout";
+
+import HomeScene from "../scenes/HomeScene";
 import "../styles/styles.css";
+
 
 type HomeProps = {};
 
 const HomePage: React.FC<HomeProps> = (props) => {
   return (
     <>
-      <ScrollControls>
-        <Scroll html>
+      <Page>
+        <color attach="background" args={["#f0f0f0"]} />
+
+        <ScrollControls damping={3} pages={5} eps={1}>
           <MainLayout>
-            <div className="home-container">
-              <div className="main-container">
-                <img
-                  className="background-image"
-                  src="https://picsum.photos/1500/800"
-                  alt="background"
-                />
-                <h1 className="home-main-text">Home Page</h1>
-              </div>
-            </div>
+            <HomeScene />
           </MainLayout>
-        </Scroll>
-      </ScrollControls>
+        </ScrollControls>
+      </Page>
     </>
   );
 };

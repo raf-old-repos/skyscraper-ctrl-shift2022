@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.parallax {
+    position: relative;
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+}
+.parallax .parallaxLayer {
+  
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+}
+.background{
+    background: linear-gradient(55deg, #0fb8ad4a 0%, #1fc8db4b 51%, #2cb6e846 85%);
+}
+.backgroundImages {
+    transform: translateZ(-1px);
+    text-align: center;
+}
+.main {
+    transform: translateZ(0px);
+    font-family:'Poppins', sans serif;
+}
+
+.learn-sidebar {
+    width: 15%;
+    position: fixed;
+    list-style-type: none;
+  }
+  
+  .learn-sidebar .learn-link {
+    padding: 6px;
+  }
+  
+  .learn-link a {
+    color: darkgrey;
+    padding: none;
+    text-decoration: none;
+  }
+  
+  .learn-link a.active {
+    color: yellow;
+  }
+  
+  .learn-link a:hover {
+    color: yellowgreen;
+  }
+  
+  .learn-article {
+      float: left;
+    margin-left: 15%;
+    width: 40%;
+    padding: 4px 4px;
+  }
+  
+  .learn-main-text {
+    text-shadow: 2px 2px 2px lightgrey;
+  }
+  
+  .learn-descriptor {
+    padding: 60px;
+    background-color: lightgrey;
+  }
+  .learn-flipCardContainer {
+      float: right;
+      
+      padding: 8px 8px;
+  }

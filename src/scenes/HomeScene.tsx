@@ -13,9 +13,9 @@ const HomeScene: React.FC<HomeSceneProps> = (props) => {
 
   // FIX SCALES
   const textScales = {
-    x: 4,
-    y: 4,
-    z: 4,
+    x: w / 4,
+    y: h / 3,
+    z: 0
   };
 
   return (
@@ -23,7 +23,7 @@ const HomeScene: React.FC<HomeSceneProps> = (props) => {
       <Scroll>
         <ambientLight intensity={0.5} />
         <Text
-          scale={[textScales.x * 1.1, textScales.y * 1.1, textScales.z]}
+          scale={[textScales.x, textScales.y, textScales.z]}
           font="/DelaGothicOne-Regular.ttf"
           position={[-w / 4, h * 0.225, 0]}
           color="#000000"
@@ -32,7 +32,7 @@ const HomeScene: React.FC<HomeSceneProps> = (props) => {
         </Text>
         <Text
           fontSize={2}
-          scale={[textScales.x / 25, textScales.y / 25, textScales.z]}
+          scale={[textScales.x / 28, textScales.y / 28, textScales.z]}
           font="/DelaGothicOne-Regular.ttf"
           position={[-w / 4, -h * 0.15, 0]}
           maxWidth={w * 1.9}

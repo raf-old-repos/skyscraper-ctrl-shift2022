@@ -37,17 +37,15 @@ const MainLayout: React.FC<MainProps> = (props) => {
 
   const footerItems: Array<FooterItem> = [
     //   ! Footer Items are not yet implemented
-    ];
+  ];
   return (
     <>
-     <Scroll html>
-      <div>New navbar here</div>
-     </Scroll>
-
-     {props.children}
-
-     // ! FIGURE OUT FOOTER
-     {/* <Scroll html>
+      <Scroll html>
+        <div>New navbar here</div>
+      </Scroll>
+      {props.children}
+      {/*  ! FIGURE OUT FOOTER */}
+      {/* <Scroll html>
       <div style={{bottom: "100%"}}>New footer here</div>
      </Scroll> */}
     </>

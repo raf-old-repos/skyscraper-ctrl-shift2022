@@ -2,12 +2,29 @@ import create from 'zustand'
 
 type StoreState = {
     clicked: number,
-    urls: Array<string>
+    urls: Array<{path: string, image: string}>
     setClicked: (newVal: any) => any
 }
 const useStore = create<StoreState>(set => ({
     clicked: 0,
-    urls: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((val) => `/${val}.jpg`),
+    urls:[{
+        path: "",
+        image: "https://picsum.photos/1920/1080"
+    },
+    {
+        path: "learn",
+        image: "https://picsum.photos/1920/1080?random=1"
+    },
+    {
+        path: "about",
+        image: "https://picsum.photos/1920/1080?random=2"
+    },
+    {
+        path: "build",
+        image: "https://picsum.photos/1920/1080?random=3"
+    }
+
+],
     setClicked: (newVal) => set((state) => ({ clicked: state.clicked = newVal }))
 }))
 

@@ -8,6 +8,7 @@ type TileItemProps = {
     position: [number, number, number]
     scale: any
     color: THREE.Color
+    url: string
 };
 
 const TileItem: React.FC<TileItemProps> = (props) => {
@@ -41,10 +42,9 @@ const TileItem: React.FC<TileItemProps> = (props) => {
 
 
     return (
-    
 
-        <Image url={""} ref={ref} {...props} position={props.position} scale={props.scale} onClick={click} onPointerOver={over} onPointerOut={out} />
-        
+        <Image ref={ref} {...props} position={props.position} scale={props.scale} onClick={click} onPointerOver={over} onPointerOut={out} />
+
     );
 };
 

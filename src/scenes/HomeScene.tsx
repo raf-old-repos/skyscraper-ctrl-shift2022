@@ -10,6 +10,8 @@ const HomeScene: React.FC<HomeSceneProps> = (props) => {
 
   const itemRef = useRef<any>();
   console.log("Hello");
+
+  // FIX SCALES
   const textScales = {
     x: 4,
     y: 4,

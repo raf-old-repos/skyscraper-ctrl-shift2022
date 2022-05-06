@@ -13,10 +13,14 @@ const HomeScene: React.FC<HomeSceneProps> = (props) => {
 
   // FIX SCALES
   const textScales = {
-    x: w / 4,
-    y: h / 3,
+    x: w / 3.8,
+    y: h / 2.9,
     z: 0
   };
+
+  useFrame(() => {
+    
+  })
 
   return (
     <>
@@ -32,7 +36,7 @@ const HomeScene: React.FC<HomeSceneProps> = (props) => {
         </Text>
         <Text
           fontSize={2}
-          scale={[textScales.x / 28, textScales.y / 28, textScales.z]}
+          scale={[textScales.x / 28, textScales.y / 27, textScales.z]}
           font="/DelaGothicOne-Regular.ttf"
           position={[-w / 4, -h * 0.15, 0]}
           maxWidth={w * 1.9}

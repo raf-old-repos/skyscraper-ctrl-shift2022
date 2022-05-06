@@ -9,7 +9,7 @@ const useStore = create<StoreState>(set => ({
     clicked: 0,
     urls:[{
         name: "home",
-        path: "",
+        path: "home",
         image: "https://picsum.photos/1920/1080"
     },
     {

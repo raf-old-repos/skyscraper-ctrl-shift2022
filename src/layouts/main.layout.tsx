@@ -9,39 +9,28 @@ import { BsBuilding } from "react-icons/bs";
 
 import { FooterItem, NavBarItem } from "../types/components";
 import { Scroll } from "@react-three/drei";
+import { useLocation } from "wouter";
 type MainProps = {};
 
 const MainLayout: React.FC<MainProps> = (props) => {
-  const navbarItems: Array<NavBarItem> = [
-    {
-      name: "Home",
-      link: "/",
-      icon: AiFillHome,
-    },
-    {
-      name: "Learn",
-      link: "/learn",
-      icon: BiBookBookmark,
-    },
-    {
-      name: "About",
-      link: "/about",
-      icon: CgProfile,
-    },
-    {
-      name: "Build",
-      link: "/build",
-      icon: BsBuilding,
-    },
-  ];
+  const [location, setLocation] = useLocation()
 
   const footerItems: Array<FooterItem> = [
     //   ! Footer Items are not yet implemented
   ];
+
+  const onSubmit = (e: any) => {
+    e.preventDefault()
+
+    setLocation("/")
+  }
   return (
     <>
       <Scroll html>
-        <div>New navbar here</div>
+        <button onClick={onSubmit}>
+          Navigator
+        </button>
+
       </Scroll>
       {props.children}
       {/*  ! FIGURE OUT FOOTER */}

@@ -2,6 +2,8 @@ import { Scroll, Text } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useRef } from "react";
 import Cube from "../models/Cube";
+import CityScene from "../models/Scene-draco";
+import Model from "../models/Turbine";
 
 type HomeSceneProps = {};
 
@@ -25,6 +27,7 @@ const HomeScene: React.FC<HomeSceneProps> = (props) => {
   return (
     <>
       <Scroll>
+      <CityScene /> 
         <ambientLight intensity={0.5} />
         <Text
           scale={[textScales.x, textScales.y, textScales.z]}
@@ -53,7 +56,7 @@ const HomeScene: React.FC<HomeSceneProps> = (props) => {
         </Text>
         <group ref={itemRef} position={[w / 5, -h * 0.15, 0]}>
           <Text>Demo, change with actual model</Text>
-          <Cube color={["yellow", "blue"]} />
+          
         </group>
         <Text
           scale={[textScales.x * 1.1, textScales.y * 1.1, textScales.z]}
@@ -79,8 +82,9 @@ const HomeScene: React.FC<HomeSceneProps> = (props) => {
           of birds and insects.
         </Text>
         <group ref={itemRef} position={[-w / 5, -h * 1.05, 0]}>
-          <Text>Demo, change with actual model</Text>
-          <Cube color={["yellow", "blue"]} />
+          {/* <Text>Demo, change with actual model</Text> */}
+          {/* <Cube color={["yellow", "blue"]} /> */}
+          <Model />
         </group>
       </Scroll>
     </>

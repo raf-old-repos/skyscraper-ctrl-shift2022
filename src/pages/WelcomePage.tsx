@@ -7,7 +7,7 @@ const WelcomePage: React.FC<WelcomeProps> = (props) => {
   return (
     <>
     <Page>
-      <color attach="background" args={["#0fb8ad4a"]} />
+      <color attach="background" args={["#d3d4d7"]} />
       <WelcomeScene />
     </Page>
 

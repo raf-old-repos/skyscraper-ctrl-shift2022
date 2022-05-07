@@ -7,12 +7,12 @@ const Page: React.FC<PageProps> = (props) => {
     <>
       <Canvas
         orthographic
-        camera={{ zoom: 80 }}
+        camera={{ zoom: 150 }}
         gl={{
           alpha: false,
-          antialias: false,
-          stencil: false,
-          depth: false,
+          antialias: true,
+          stencil: true,
+          depth: true,
         }}
         dpr={[1, 1.5]}
       >

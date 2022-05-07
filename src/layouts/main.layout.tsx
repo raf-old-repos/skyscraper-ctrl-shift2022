@@ -11,7 +11,7 @@ const MainLayout: React.FC<MainProps> = (props) => {
   return (
     <>
       <Scroll html>
-        <NavBar mainLogo="/Logo.png" />
+        <NavBar mainLogo="/logo.png" />
 
       </Scroll>
       {props.children}

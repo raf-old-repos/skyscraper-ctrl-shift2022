@@ -1,29 +1,33 @@
 import React from "react";
-import { NavBarItem } from "../types/components";
-import { Link } from "wouter";
+import "../styles/styles.css";
+import { useLocation } from "wouter";
 type NavBarProps = {
-  navbarItems: NavBarItem[];
   mainLogo: string;
 };
 
 const NavBar: React.FC<NavBarProps> = (props) => {
+
+  const [location, setLocation] = useLocation()
+
+
+  const onSubmit = (e: any) => {
+    e.preventDefault()
+
+    setLocation("/")
+  }
   return (
-    <div className="navbar-container">
-      <img className="navbar-logo" src={props.mainLogo} alt="logo" />
-      <ul className="navbar-list">
-        {props.navbarItems.map((Item, idx) => {
-          return (
-            <li key={idx} className="nav-link">
-              <Link to={Item.link}>
-                <Item.icon className="nav-icon" />
-                {console.log(Item)}
-                {Item.name}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <>
+      <button className="btn-nav" onClick={onSubmit}>
+        Navigator
+      </button>
+      <img
+        className="nav-img"
+        src={props.mainLogo}
+        alt="Logo"
+        height={50}
+        width={50}
+      />
+    </>
   );
 };
 

@@ -1,5 +1,4 @@
 import { Text } from "@react-three/drei";
-import { ReactChildren } from "react";
 
 type MainTextProps = {
   children: string;

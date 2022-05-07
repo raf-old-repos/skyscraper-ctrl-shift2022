@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useScroll, Image, Text } from "@react-three/drei";
 import * as THREE from "three"
 import useStore from "../stores/useStore"
 import { useFrame, useThree } from "@react-three/fiber";
-import { Link, useLocation } from "wouter";
+import { useLocation } from "wouter";
 type TileItemProps = {
     index: number;
     position: [number, number, number]

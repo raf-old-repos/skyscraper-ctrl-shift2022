@@ -1,6 +1,5 @@
 import { Router, Route, Switch } from "wouter";
-import HomePage from "../pages/HomePage";
-import LearnPage from "../pages/LearnPage";
+
 
 type RouteType = {
   path: string;

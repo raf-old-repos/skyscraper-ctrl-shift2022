@@ -50,6 +50,25 @@
   text-align: center;
 }
 
+.btn-nav {
+  position: absolute;
+  top:50%;
+  left: 75px;
+  background-color:#a062da;
+  color: #fff;
+  border:none; 
+  border-radius:20px; 
+  padding:15px;
+  min-height:30px; 
+  min-width: 120px;
+}
+
+.nav-img {
+  position: relative;
+  top: 25px;  
+  left: 15px
+
+}
 .navbar-list {
   position: absolute;
   right: 50px;

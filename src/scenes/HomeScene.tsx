@@ -1,29 +1,31 @@
 import {
-  OrbitControls,
   Scroll,
-  Stage,
-  Text,
   useScroll,
+  Image
 } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useRef } from "react";
+import { useLocation } from "wouter";
 import { MainText } from "../components/MainText";
-import Cube from "../models/Cube";
 import Earth from "../models/Earth";
 import EmpireTrust from "../models/EmpireTrustNew";
 
 import CityScene from "../models/Scene-draco";
+import VideoText from "../models/VideoText";
 
 type HomeSceneProps = {};
 
 const HomeScene: React.FC<HomeSceneProps> = (props) => {
   const { width: w, height: h } = useThree((state) => state.viewport);
 
-  const itemRef = useRef<any>();
+  const [_, setLocation] = useLocation();
+
+
   console.log("Hello");
 
   const textRef = useRef<any>();
   const sceneRef = useRef<any>();
+  const hyperClickRef = useRef<any>();
 
   const scroll = useScroll();
 
@@ -37,6 +39,7 @@ const HomeScene: React.FC<HomeSceneProps> = (props) => {
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
 
+
     const r1 = scroll.range(0 / 4, 1 / 4);
     const r2 = scroll.range(1 / 4, 6);
     const r3 = scroll.visible(4 / 5, 1 / 5);
@@ -44,8 +47,6 @@ const HomeScene: React.FC<HomeSceneProps> = (props) => {
     // move sceneRef down with scroll
     sceneRef.current.rotation.x = r1 * 0.5;
     sceneRef.current.position.y = r1 * 16;
-
-  
 
     if (r1 > 0.12) {
       textRef.current.scale.x = r1 * 4;
@@ -94,7 +95,6 @@ const HomeScene: React.FC<HomeSceneProps> = (props) => {
             color={"#591cdd"}
           />
 
-
           <EmpireTrust position={[0, -10, 0]} />
           <group>
             <MainText
@@ -109,24 +109,76 @@ const HomeScene: React.FC<HomeSceneProps> = (props) => {
           </group>
         </group>
 
-        <group >
+        <group>
           <ambientLight intensity={2} />
-         
-          
-          <Earth position={[2, -15, 0]} scale={0.01} />
-         
-          <MainText
-          maxWidth={40}
-          color={"#000000"}
-          position={[-2, -15, -10]}
-          scale={[textScales.x / 30, textScales.y / 30, 0]}>
-            Our planet won't be the same without skyscrapers.
 
-            Nor will it last forever.
+          <Earth position={[2, -15, 0]} scale={0.01} />
+
+          <MainText
+            maxWidth={40}
+            color={"#000000"}
+            position={[-2, -15, -10]}
+            scale={[textScales.x / 30, textScales.y / 30, 0]}
+          >
+            Our planet won't be the same without skyscrapers. Nor will it last
+            forever.
           </MainText>
-      
-            
-        
+
+          <group>
+            <MainText
+              maxWidth={40}
+              color={"#000000"}
+              position={[0, -18, -10]}
+              scale={[textScales.x / 30, textScales.y / 30, 0]}
+            >
+              Explore.
+            </MainText>
+            <spotLight
+              position={[-1, -15, 0]}
+              angle={1}
+              penumbra={1}
+              intensity={2.5}
+              castShadow
+              color={"#591cdd"}
+            />
+            <group
+              ref={hyperClickRef}
+              onClick={() => {
+                setLocation("/about");
+              }}
+            >
+              <spotLight
+                angle={0.25}
+                penumbra={0.5}
+                position={[-2, -15, 0]}
+                castShadow
+              />
+              <VideoText
+                customText="About"
+                position={[-2, -20, 0]}
+                scale={0.2}
+                customFontPath={"/DelaGothicOne-Regular.ttf"}
+              />
+            </group>
+            <group
+              onClick={() => {
+                setLocation("/learn");
+              }}
+            >
+              <spotLight
+                angle={0.25}
+                penumbra={0.5}
+                position={[-2, -15, 0]}
+                castShadow
+              />
+              <VideoText
+                customText="Learn"
+                position={[2, -20, 0]}
+                scale={0.2}
+                customFontPath={"/DelaGothicOne-Regular.ttf"}
+              />
+            </group>
+          </group>
         </group>
       </Scroll>
     </>

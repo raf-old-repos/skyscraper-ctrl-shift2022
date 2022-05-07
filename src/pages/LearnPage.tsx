@@ -14,8 +14,12 @@ const LearnPage: React.FC<LearnProps> = (props) => {
     <div className="parallax background">
     
          <div className="parallaxLayer backgroundImages ">
-                <h1>pp</h1>
-            </div>
+            <img className="backgroundimgcenter" src="https://www.stefanoboeriarchitetti.net/wp-content/uploads/2018/10/cBoeri-Studio_Vertical-Forest_ph.Dimitar-Harizanov_DHSDM_bassa.jpg"></img>
+            <br></br>
+            <img className="backgroundimgleft" src="greenwall.jpg"></img>
+            <br></br>
+            <img className="backgroundimgright" src="greencity.jpg"></img>
+        </div>
     <div className="parallaxLayer main">
         <ul className="learn-sidebar">
             <li className="learn-link"><a href="#intro">Introduction</a></li>

@@ -21,7 +21,6 @@ const HomeScene: React.FC<HomeSceneProps> = (props) => {
   const [_, setLocation] = useLocation();
 
 
-  console.log("Hello");
 
   const textRef = useRef<any>();
   const sceneRef = useRef<any>();

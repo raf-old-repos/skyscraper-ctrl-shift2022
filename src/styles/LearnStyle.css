@@ -18,7 +18,7 @@
 
 }
 .background{
-    background: linear-gradient(55deg, #0fb8ad4a 0%, #1fc8db4b 51%, #2cb6e846 85%);
+    background: white;
 }
 .backgroundImages {
     transform: translateZ(-1px);
@@ -30,7 +30,7 @@
 }
 
 .learn-sidebar {
-    width: 15%;
+    width: max(15%, 50px);
     position: fixed;
     list-style-type: none;
   }
@@ -61,7 +61,7 @@
   }
   
   .learn-main-text {
-    text-shadow: 2px 2px 2px lightgrey;
+    /*text-shadow: 2px 2px 2px lightgrey;*/
   }
   
   .learn-descriptor {

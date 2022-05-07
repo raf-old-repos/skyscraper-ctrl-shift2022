@@ -50,7 +50,7 @@ const LearnPage: React.FC<LearnProps> = (props) => {
                     be white so it blends in with the rest of the page.
                   </h3>
                 </article>
-            <div className="learn-flipCardContainer">
+            <div className="learn-flip-cardContainer">
                 <div className="flip-card">
                     <div className="flip-card-inner">
                         <div className="flip-card-front">
@@ -95,16 +95,16 @@ const LearnPage: React.FC<LearnProps> = (props) => {
              </div>
              
              <div>
+        <div>        
             <article className="learn-article">
                 <h2 id="windPower">Wind Power and Skyscrapers...A work in progress</h2>
                 <p>a paragraph about the pros and cons of wind turbines in buildings
                     and why they haven't worked well when implemented.
                 </p>
-                <h3 className="learn-descriptor">
-                    A React canvas with flipcards about the Strata SE1 London Tower
-                    the Bahrain world trade center, and the Houston Hess building.
-                </h3>
             </article>
+            
+        </div>
+        
             <article className="learn-article">
                 <h2 id="solarPower">Solar Power technology and its potential</h2>
                 
@@ -123,6 +123,52 @@ const LearnPage: React.FC<LearnProps> = (props) => {
                      </p>
                 </article>
                 </div>
+               <div className="flip-main">
+                <div className="container">
+                    <div className="row">
+                        
+                        <div className="flip-card">
+                            <div className="flip-card-inner">
+                                <div className="flip-card-front">
+                                    <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/bahrain-world-trade-center-at-dusk-manama-bahrain-ivan-pendjakov.jpg"></img>
+                                </div>
+                                <div className="flip-card-back">
+                                    <div className="text">
+                                        <p>please work please</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="flip-card">
+                            <div className="flip-card-inner">
+                                <div className="flip-card-front">
+                                    <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/bahrain-world-trade-center-at-dusk-manama-bahrain-ivan-pendjakov.jpg"></img>
+                                </div>
+                                <div className="flip-card-back">
+                                    <div className="text">
+                                        <p>please work please</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="flip-card">
+                            <div className="flip-card-inner">
+                                <div className="flip-card-front">
+                                    <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/bahrain-world-trade-center-at-dusk-manama-bahrain-ivan-pendjakov.jpg"></img>
+                                </div>
+                                <div className="flip-card-back">
+                                    <div className="text">
+                                        <p>please work please</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div> 
             </div>
 
         </div>

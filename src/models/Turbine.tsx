@@ -37,7 +37,7 @@ export default function Model({ ...props }: JSX.IntrinsicElements["group"]) {
     "/turbine-transformed.glb"
   ) as unknown as GLTFResult;
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={group} {...props} >
       <mesh
         geometry={nodes.mesh_id48_instance_0.geometry}
         material={materials["127"]}

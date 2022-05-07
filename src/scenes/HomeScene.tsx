@@ -1,9 +1,18 @@
-import { Scroll, Text } from "@react-three/drei";
+import {
+  OrbitControls,
+  Scroll,
+  Stage,
+  Text,
+  useScroll,
+} from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useRef } from "react";
+import { MainText } from "../components/MainText";
 import Cube from "../models/Cube";
+import Earth from "../models/Earth";
+import EmpireTrust from "../models/EmpireTrustNew";
+
 import CityScene from "../models/Scene-draco";
-import Model from "../models/Turbine";
 
 type HomeSceneProps = {};
 
@@ -13,78 +22,111 @@ const HomeScene: React.FC<HomeSceneProps> = (props) => {
   const itemRef = useRef<any>();
   console.log("Hello");
 
+  const textRef = useRef<any>();
+  const sceneRef = useRef<any>();
+
+  const scroll = useScroll();
+
   // FIX SCALES
   const textScales = {
     x: w / 3.8,
-    y: h / 2.9,
-    z: 0
+    y: 4,
+    z: 0,
   };
 
-  useFrame(() => {
-    
-  })
+  useFrame((state) => {
+    const t = state.clock.getElapsedTime();
+
+    const r1 = scroll.range(0 / 4, 1 / 4);
+    const r2 = scroll.range(1 / 4, 6);
+    const r3 = scroll.visible(4 / 5, 1 / 5);
+
+    // move sceneRef down with scroll
+    sceneRef.current.rotation.x = r1 * 0.5;
+    sceneRef.current.position.y = r1 * 16;
+
+  
+
+    if (r1 > 0.12) {
+      textRef.current.scale.x = r1 * 4;
+      textRef.current.scale.y = r1 * 4;
+      textRef.current.scale.z = r1 * 4;
+    }
+  });
 
   return (
     <>
       <Scroll>
-      <CityScene /> 
-        <ambientLight intensity={0.5} />
-        <Text
-          scale={[textScales.x, textScales.y, textScales.z]}
-          font="/DelaGothicOne-Regular.ttf"
-          position={[-w / 4, h * 0.225, 0]}
-          color="#000000"
-        >
-          Introduction
-        </Text>
-        <Text
-          fontSize={2}
-          scale={[textScales.x / 28, textScales.y / 27, textScales.z]}
-          font="/DelaGothicOne-Regular.ttf"
-          position={[-w / 4, -h * 0.15, 0]}
-          maxWidth={w * 1.9}
-          lineHeight={0.9}
-        >
-          Amid the changing climate, it is becoming more desirable to construct
-          buildings and skyscrapers that have a reduced carbon footprint. Since
-          many cities still rely primarily on carbon-heavy energy, designers are
-          focussing on reducing the energy consumption of individual buildings.
-          This includes passive design strategies, which takes advantage of the
-          surrounding environment without using energy, and active design.
-          Efficiency of building systems and using renewable energy like solar
-          power are parts of active design
-        </Text>
-        <group ref={itemRef} position={[w / 5, -h * 0.15, 0]}>
-          <Text>Demo, change with actual model</Text>
-          
+        <group ref={sceneRef} position={[0, -h * 0.1, -10]}>
+          <fog attach="fog" args={["#cc7b32", 12, 100]} />
+          <spotLight intensity={2} position={[0, h * 3, -15]} />
+          <CityScene position={[0, -h * 0.4, -10]} rotation={[-0.001, 0, 0]} />
         </group>
-        <Text
-          scale={[textScales.x * 1.1, textScales.y * 1.1, textScales.z]}
-          font="/DelaGothicOne-Regular.ttf"
-          position={[w / 4, -h * 0.7, 0]}
-          color="#000000"
-          maxWidth={0.9}
-        >
-          Bosco Verticale &nbsp; “The vertical forest”
-        </Text>
-        <Text
-          fontSize={2}
-          scale={[textScales.x / 25, textScales.y / 25, textScales.z]}
-          font="/DelaGothicOne-Regular.ttf"
-          position={[w / 4, -h * 1.05, 0]}
-          maxWidth={w * 1.9}
-          lineHeight={0.9}
-        >
-          This pair of residential building towers, constructed in Milan in
-          2014, is now an iconic example for green buildings around the world.
-          The plants and trees on the facade absorbs pollution, reduces the
-          temperature in and around the building, and harbours numerous species
-          of birds and insects.
-        </Text>
-        <group ref={itemRef} position={[-w / 5, -h * 1.05, 0]}>
-          {/* <Text>Demo, change with actual model</Text> */}
-          {/* <Cube color={["yellow", "blue"]} /> */}
-          <Model />
+
+        <ambientLight intensity={1} />
+
+        <group ref={textRef} position={[-w / 50, h * 0.115, -50]}>
+          <MainText
+            scale={[textScales.x / 30, textScales.y / 30, 0]}
+            color={"#000000"}
+          >
+            Skyscrapers.
+          </MainText>
+        </group>
+        <group>
+          <ambientLight intensity={2} />
+          <spotLight
+            position={[0, 25, 0]}
+            angle={0.3}
+            penumbra={1}
+            intensity={2.5}
+            castShadow
+            shadow-mapSize={[2048, 2048]}
+            color={"#591cdd"}
+          />
+          <spotLight
+            position={[0, -15, 0]}
+            angle={1}
+            penumbra={1}
+            intensity={2.5}
+            castShadow
+            shadow-mapSize={[2048, 2048]}
+            color={"#591cdd"}
+          />
+
+
+          <EmpireTrust position={[0, -10, 0]} />
+          <group>
+            <MainText
+              maxWidth={40}
+              color={"#000000"}
+              position={[2, -6, -10]}
+              scale={[textScales.x / 30, textScales.y / 30, 0]}
+            >
+              A website about skyscrapers & their impact on humankind, the
+              planet, and the future.
+            </MainText>
+          </group>
+        </group>
+
+        <group >
+          <ambientLight intensity={2} />
+         
+          
+          <Earth position={[2, -15, 0]} scale={0.01} />
+         
+          <MainText
+          maxWidth={40}
+          color={"#000000"}
+          position={[-2, -15, -10]}
+          scale={[textScales.x / 30, textScales.y / 30, 0]}>
+            Our planet won't be the same without skyscrapers.
+
+            Nor will it last forever.
+          </MainText>
+      
+            
+        
         </group>
       </Scroll>
     </>

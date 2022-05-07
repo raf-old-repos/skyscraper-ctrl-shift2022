@@ -31,7 +31,7 @@ export default function CityScene({ ...props }: JSX.IntrinsicElements['group']) 
   useFrame((state) => {
     const t = state.clock.getElapsedTime()
     group.current.position.x = Math.sin(t / 4)
-    const y = Math.sin(t / 4) * 0.9
+    const y = Math.sin(t / 8) * 0.9
     group.current.rotation.y = y
   })
   return (
